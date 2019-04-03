@@ -15,12 +15,6 @@ services:
       KAFKA_ADVERTISED_HOST_NAME: 192.165.5.252
       KAFKA_ADVERTISED_PORT: 9092
       KAFKA_ZOOKEEPER_CONNECT: zoo1:2181,zoo2:2181,zoo3:2181
-    deploy:
-      resources:
-        limits:
-          memory: 600m
-        reservations:
-          memory: 300m
    
   kafka2:
     image: wurstmeister/kafka
@@ -36,12 +30,6 @@ services:
       KAFKA_ADVERTISED_HOST_NAME: 192.165.5.252
       KAFKA_ADVERTISED_PORT: 9093
       KAFKA_ZOOKEEPER_CONNECT: zoo1:2181,zoo2:2181,zoo3:2181
-    deploy:
-      resources:
-        limits:
-          memory: 600m
-        reservations:
-          memory: 300m  
 
   kafka3:
     image: wurstmeister/kafka
@@ -56,13 +44,7 @@ services:
       KAFKA_BROKER_ID: 3
       KAFKA_ADVERTISED_HOST_NAME: 192.165.5.252
       KAFKA_ADVERTISED_PORT: 9094
-      KAFKA_ZOOKEEPER_CONNECT: zoo1:2181,zoo2:2181,zoo3:2181
-    deploy:
-      resources:
-        limits:
-          memory: 600m
-        reservations:
-          memory: 300m  
+      KAFKA_ZOOKEEPER_CONNECT: zoo1:2181,zoo2:2181,zoo3:2181 
 
   zoo1:
     image: zookeeper
